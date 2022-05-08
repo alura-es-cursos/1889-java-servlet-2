@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class NuevaEmpresa {
 	
-	public void ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String ejecutar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("nueva empresa registrada");
 		
@@ -39,7 +39,7 @@ public class NuevaEmpresa {
 		
 		request.setAttribute("empresa", empresa.getNombre());
 		
-		response.sendRedirect("entrada?accion=ListaEmpresas");
+		return "redirect:entrada?accion=ListaEmpresas";
 		
 	}
 

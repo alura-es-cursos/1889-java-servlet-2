@@ -30,16 +30,16 @@ public class UnicaEntradaServlet extends HttpServlet {
 			nombre = accion.ejecutar(request, response);
 		}else if(paramAccion.equals("MostrarEmpresa")) {
 			MostrarEmpresa accion = new MostrarEmpresa();
-			accion.ejecutar(request, response);
+			nombre = accion.ejecutar(request, response);
 		}else if(paramAccion.equals("EliminarEmpresa")) {
 			EliminarEmpresa accion = new EliminarEmpresa();
 			nombre = accion.ejecutar(request, response);
 		}else if(paramAccion.equals("ModificarEmpresa")) {
 			ModificarEmpresa accion = new ModificarEmpresa();
-			accion.ejecutar(request, response);
+			nombre = accion.ejecutar(request, response);
 		}else if(paramAccion.equals("NuevaEmpresa")) {
 			NuevaEmpresa accion = new NuevaEmpresa();
-			accion.ejecutar(request, response);
+			nombre = accion.ejecutar(request, response);
 		}
 		
 		String[] tipoYDireccion = nombre.split(":");
