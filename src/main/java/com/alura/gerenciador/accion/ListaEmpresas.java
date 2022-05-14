@@ -21,7 +21,7 @@ public class ListaEmpresas {
 		
 		request.setAttribute("empresas", listaEmpresas);
 		
-		return "forward:/listaEmpresas.jsp";
+		return "forward:listaEmpresas.jsp";
 		
 	}
 	

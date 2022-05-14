@@ -7,6 +7,7 @@ import com.alura.gerenciador.accion.ListaEmpresas;
 import com.alura.gerenciador.accion.ModificarEmpresa;
 import com.alura.gerenciador.accion.MostrarEmpresa;
 import com.alura.gerenciador.accion.NuevaEmpresa;
+import com.alura.gerenciador.accion.NuevaEmpresaForm;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -40,12 +41,15 @@ public class UnicaEntradaServlet extends HttpServlet {
 		}else if(paramAccion.equals("NuevaEmpresa")) {
 			NuevaEmpresa accion = new NuevaEmpresa();
 			nombre = accion.ejecutar(request, response);
+		}else if(paramAccion.equals("NuevaEmpresaForm")) {
+			NuevaEmpresaForm accion = new NuevaEmpresaForm();
+			nombre = accion.ejecutar(request, response);
 		}
 		
 		String[] tipoYDireccion = nombre.split(":");
 		
 		if(tipoYDireccion[0].equals("forward")) {
-			RequestDispatcher rd = request.getRequestDispatcher(tipoYDireccion[1]);
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+tipoYDireccion[1]);
 			rd.forward(request, response);
 		}else {
 			response.sendRedirect(tipoYDireccion[1]);
