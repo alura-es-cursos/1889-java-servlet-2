@@ -62,4 +62,13 @@ public class DB {
 		return null;
 	}
 
+	public Usuario existeUsuario(String paramLogin, String paramContrasena) {
+		for(Usuario usuario: listaUsuarios) {
+			if(usuario.esIgual(paramLogin, paramContrasena)) {
+				return usuario;
+			}
+		}
+		return null;
+	}
+
 }
