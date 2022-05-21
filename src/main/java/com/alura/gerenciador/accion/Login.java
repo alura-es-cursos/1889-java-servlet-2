@@ -8,6 +8,7 @@ import com.alura.gerenciador.modelo.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class Login implements Accion {
 
@@ -25,6 +26,8 @@ public class Login implements Accion {
 		
 		if(usuario!=null){
 			System.out.println("Usuario existe");
+			HttpSession sesion = request.getSession();
+			sesion.setAttribute("loginUsuario", usuario);
 			return "redirect:entrada?accion=ListaEmpresas";
 		}else{
 			return "redirect:entrada?accion=LoginForm";
