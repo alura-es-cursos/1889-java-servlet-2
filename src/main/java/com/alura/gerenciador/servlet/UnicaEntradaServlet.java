@@ -20,15 +20,15 @@ public class UnicaEntradaServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramAccion = request.getParameter("accion");
-		HttpSession sesion = request.getSession();
+		//HttpSession sesion = request.getSession();
 		
-		Boolean esUnUsuarioNoLogado = (sesion.getAttribute("loginUsuario")==null);
-		Boolean esUnaAccionProtegida = !(paramAccion.equals("Login") || paramAccion.equals("LoginForm"));
+		//Boolean esUnUsuarioNoLogado = (sesion.getAttribute("loginUsuario")==null);
+		//Boolean esUnaAccionProtegida = !(paramAccion.equals("Login") || paramAccion.equals("LoginForm"));
 		
-		if(esUnUsuarioNoLogado && esUnaAccionProtegida) {
-			response.sendRedirect("entrada?accion=LoginForm");
-			return;
-		}
+		//if(esUnUsuarioNoLogado && esUnaAccionProtegida) {
+			//response.sendRedirect("entrada?accion=LoginForm");
+			//return;
+		//}
 		
 		String nombreDeClase = "com.alura.gerenciador.accion."+paramAccion;
 		String nombre;
