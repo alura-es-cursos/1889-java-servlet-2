@@ -9,7 +9,7 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 
-@WebFilter(urlPatterns = "/entrada")
+//@WebFilter(urlPatterns = "/entrada")
 public class MonitoreoFilter implements Filter{
 
 	@Override
