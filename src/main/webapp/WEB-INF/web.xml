@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
-  
   <display-name>gerenciador</display-name>
-  
   <welcome-file-list>
     <welcome-file>bienvenido.html</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>HolaMundoServlet</servlet-name>
     <servlet-class>com.alura.gerenciador.servlet.HolaMundoServlet</servlet-class>
@@ -15,7 +12,6 @@
     <servlet-name>HolaMundoServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
-  
   <filter>
     <filter-name>MF</filter-name>
     <filter-class>com.alura.gerenciador.servlet.MonitoreoFilter</filter-class>
@@ -24,7 +20,6 @@
     <filter-name>MF</filter-name>
     <url-pattern>/entrada</url-pattern>
   </filter-mapping>
-  
   <filter>
     <filter-name>AF</filter-name>
     <filter-class>com.alura.gerenciador.servlet.AutorizacionFilter</filter-class>
@@ -33,7 +28,6 @@
     <filter-name>AF</filter-name>
     <url-pattern>/entrada</url-pattern>
   </filter-mapping>
-  
   <filter>
     <filter-name>CF</filter-name>
     <filter-class>com.alura.gerenciador.servlet.ControladorFilter</filter-class>
@@ -42,5 +36,4 @@
     <filter-name>CF</filter-name>
     <url-pattern>/entrada</url-pattern>
   </filter-mapping>
-  
 </web-app>
