@@ -6,6 +6,7 @@ import java.util.List;
 import com.alura.gerenciador.modelo.DB;
 import com.alura.gerenciador.modelo.Empresa;
 import com.google.gson.Gson;
+import com.thoughtworks.xstream.XStream;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,11 +22,18 @@ public class EmpresasService extends HttpServlet {
 		
 		List<Empresa> empresas = new DB().getEmpresas();
 		
-		Gson gson = new Gson();
-		String json = gson.toJson(empresas); 
+		XStream xstream = new XStream();
+		xstream.alias("empresa", Empresa.class);
+		String xml = xstream.toXML(empresas);
 		
-		response.setContentType("Application/json");
-		response.getWriter().print(json);
+		response.setContentType("Application/xml");
+		response.getWriter().print(xml);
+		
+//		Gson gson = new Gson();
+//		String json = gson.toJson(empresas);
+//		
+//		response.setContentType("Application/json");
+//		response.getWriter().print(json);
 		
 	}
 
